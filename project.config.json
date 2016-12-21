@@ -19,11 +19,17 @@
 
             "lib": "./wwwroot/lib/js",
 
-            "src": "./wwwroot/js",
+            "src": "./wwwroot/js/**/*.js",
 
-            "dest": "./wwwroot/dist/js",
+            "dest": "./dist/js",
 
             "watch": "src"
+        },
+
+        "images": {
+            "src": "./wwwroot/images/**/*.+(png|jpg|jpeg|gif|svg)",
+            "dest": "./dist/images"
         }
+
     }
 }

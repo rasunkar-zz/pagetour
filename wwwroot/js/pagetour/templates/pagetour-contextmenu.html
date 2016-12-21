@@ -1,0 +1,20 @@
+﻿<div ng-controller="PageTourContextMenuController as ptCmCtrl">
+    <page-tour-author-dock application="grm" resourceid="resource/adminPageTourAuthorDock"></page-tour-author-dock>
+    <div class="btn-group pull-left help pagetourdropdown">
+        <button id="pageTourMenuOpen" type="button" class="icon-container withBorder" ng-click="ptCmCtrl.renderPageTourOnClick()">
+            <i class="icon pageTourIcon"></i>
+        </button>
+
+        <ul class="pagetourdropdown-content dropdown-menu">
+            <li>
+                <a href="" ng-click="ptCmCtrl.showAllTutorials();">View All Tutorials</a>
+            </li>
+            <li>
+                <a href="" ng-click="ptCmCtrl.showAuthorDock();">New Tutorial</a>
+            </li>
+            <li ng-repeat="tutorial in ptCmCtrl.listOfTutorials">
+                <a href="" page-tour-play-tutorial resource-id="/resource/{{tutorial}}" ng-click="playPageTour()">{{tutorial}}</a>
+            </li>
+        </ul>
+    </div>
+</div>

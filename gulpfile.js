@@ -15,7 +15,8 @@ var gulp = require('gulp'),
     prefixer = require('gulp-autoprefixer'),
     browserSync = require('browser-sync').create(),
     rimraf = require("rimraf"),
-    runSequence = require('run-sequence');
+    imagemin = require('gulp-imagemin');
+runSequence = require('run-sequence');
 
 // Error Handler function
 var errorHandler = function(error) {
@@ -47,9 +48,10 @@ gulp.task('clean:dist', function(done) {
 });
 
 // Minify css file and prepare the distributable css
-gulp.task('minify:dist', ['compile:scss'], function() {
+gulp.task('minify:css', ['compile:scss'], function() {
     return gulp.src([
-
+            config.files.css.lib + '**/*.css',
+            config.files.css.dest + '**/*.css'
         ])
         .pipe(plumber(errorHandler))
         .pipe(concat('pagetour.module.css'))
@@ -77,20 +79,30 @@ gulp.task('minify:js', ['pagetour:minify:js'], function() {
         .pipe(concat('pagetour.module.js'))
         .pipe(rename({ suffix: '.min' }))
         .pipe(gulp.dest(config.files.min));
-
 });
 
 
 // Minfiy the pagetour js files and prepare the distributable js
 gulp.task('pagetour:minify:js', ['clean:js'], function() {
+    console.log(config.files.js.src);
     return gulp.src(config.files.js.src)
         .pipe(plumber(errorHandler))
         .pipe(concat('pagetour.js'))
         .pipe(gulp.dest(config.files.js.dest));
 });
 
+// Minify images and prepare the distributable
+gulp.task('minify:images', function() {
+    return gulp.src(config.files.images.src)
+        /*// Caching images that ran through imagemin
+        .pipe(cache(imagemin({
+            interlaced: true
+        })))*/
+        .pipe(gulp.dest(config.files.images.dest))
+});
+
 // Watch files for changes and repeat respective operations
-gulp.task('watch', [browserSync], function() {
+gulp.task('watch', ['browserSync'], function() {
     gulp.watch(config.files.css[config.files.css.watch], ['minify:css']);
     gulp.watch(config.files.js[config.files.js.watch], ['minify:js']);
 });
@@ -99,8 +111,8 @@ gulp.task('watch', [browserSync], function() {
 gulp.task('browserSync', function() {
     browserSync.init({
         server: {
-            baseDir: './'
-        },
+            baseDir: './',
+        }
     })
 });
 
@@ -128,9 +140,10 @@ gulp.task('bower:install', ['bower:clean'], function() {
 });
 
 gulp.task('install', ['bower:install', 'bower:clean'], function() {});
+
 gulp.task('default', function() {
 
-    runSequence('clean:dist', ['minify:css', 'minify:js', 'watch'],
+    runSequence('clean:dist', ['minify:css', 'minify:js', 'minify:images'],
         function() {
             var message = 'Tasks Executed:\n' +
                 '1. Cleaned the distributable folder. \n' +
@@ -139,4 +152,8 @@ gulp.task('default', function() {
 
                 console.log(message);
         });
+});
+
+gulp.task('devTasks', function() {
+    runSequence('default', 'watch');
 });

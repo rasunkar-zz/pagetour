@@ -1,0 +1,65 @@
+/* PageTour Style Sheet*/
+.pageTourIcon {
+  width: 36px;
+  height: 36px;
+  display: inline-block;
+  text-align: right;
+  padding: 12px 16px 6px 1px;
+  content: url(http://localhost:5000/images/pagetour/pagetour-32.png); }
+
+.pageTourContextMenu {
+  position: absolute;
+  left: 1100px; }
+
+.pageTourContextMenu:hover {
+  background: #0760a7; }
+
+.pageTourContextMenu.open .arrow-up {
+  display: block;
+  position: absolute;
+  top: 44px;
+  left: 20px; }
+
+.pageTourContextMenu .arrow-up {
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid #F8F8F8;
+  display: none; }
+
+.pageTourContextMenu ul.dropdown-menu {
+  position: fixed;
+  position: -ms-page;
+  margin: 0;
+  border-radius: 0;
+  top: 48px;
+  right: 0;
+  left: auto;
+  width: 296px;
+  list-style: none;
+  border-top: none;
+  padding: 0;
+  background-color: #e5e5e5;
+  box-shadow: none;
+  border-left: none;
+  overflow-y: auto;
+  z-index: 2000;
+  height: calc(100vh - 82px); }
+
+.pageTourContextMenuContent {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); }
+
+.pageTourContextMenuContent a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block; }
+
+@media screen and (min-width: 640px) and (max-width: 1024px) {
+  .pageTourContextMenu ul.dropdown-menu {
+    position: -ms-page; } }
