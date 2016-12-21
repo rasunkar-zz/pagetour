@@ -1,0 +1,29 @@
+﻿{
+    "files": {
+        "root": "./",
+        "lib": "./wwwroot/lib",
+        "distDir": "./dist",
+        "min": "./dist/min",
+        "css": {
+
+            "lib": "./wwwroot/lib/css",
+
+            "src": "./wwwroot/scss/**/*.scss",
+
+            "dest": "./wwwroot/css",
+
+            "watch": "src"
+        },
+
+        "js": {
+
+            "lib": "./wwwroot/lib/js",
+
+            "src": "./wwwroot/js",
+
+            "dest": "./wwwroot/dist/js",
+
+            "watch": "src"
+        }
+    }
+}

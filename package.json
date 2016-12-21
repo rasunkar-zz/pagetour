@@ -3,8 +3,30 @@
   "version": "1.0.0",
   "description": "Angular API for Page Tour functionality as a service",
   "main": "index.js",
-  "dependencies": {},
-  "devDependencies": {},
+  "dependencies": {
+    "blob": "0.0.4",
+    "filesaver": "0.0.13",
+    "tether-shepherd": "^1.8.1"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.18.5",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-bower": "0.0.13",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssmin": "^0.1.7",
+    "gulp-debug": "^3.0.0",
+    "gulp-filter": "^4.0.0",
+    "gulp-folders": "^1.1.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.5.4",
+    "gulp-sass": "^3.0.0",
+    "gulp-uglify": "^2.0.0",
+    "main-bower-files": "^2.13.1",
+    "rimraf": "^2.5.4",
+    "run-sequence": "^1.2.2"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

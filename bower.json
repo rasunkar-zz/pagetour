@@ -9,7 +9,7 @@
   "keywords": [
     "pagetour"
   ],
-  "homepage": "",
+  "homepage": "https://github.com/rasunkar/pagetour",
   "private": true,
   "ignore": [
     "**/.*",
@@ -17,5 +17,10 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "blob": "*",
+    "tether-shepherd": "^1.8.1",
+    "file-saver": "filesaver#^1.3.3"
+  }
 }
