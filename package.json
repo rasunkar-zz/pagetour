@@ -1,0 +1,16 @@
+{
+  "name": "pagetourasaservice",
+  "version": "1.0.0",
+  "description": "Angular API for Page Tour functionality as a service",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "pagetour"
+  ],
+  "author": "rasunkar@microsoft.com",
+  "license": "ISC"
+}

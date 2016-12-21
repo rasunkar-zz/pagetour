@@ -1,0 +1,21 @@
+{
+  "name": "pagetourasaservice",
+  "description": "Angular API for Page Tour functionality as a service",
+  "main": "index.js",
+  "authors": [
+    "rasunkar@microsoft.com"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "pagetour"
+  ],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
